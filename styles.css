@@ -1,0 +1,140 @@
+/* Fuente limpia y moderna */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #00c6ff, #0072ff); /* cielo azul */
+  color: #fff;
+}
+
+/* Contenedor principal */
+#container {
+  max-width: 420px;
+  width: 90%;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+#container:hover {
+  transform: translateY(-5px);
+}
+
+/* Títulos */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #ffcc70, #ff8177, #cf556c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #f0f0f0;
+}
+
+/* Inputs y botón */
+#inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  transform: scale(1.03);
+}
+
+button {
+  padding: 12px;
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ff5e62, #ff9966);
+  transform: scale(1.05);
+}
+
+/* Sección de clima */
+#weatherDisplay {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  font-size: 1.05rem;
+  line-height: 1.5rem;
+  animation: fadeIn 0.6s ease;
+}
+
+#weatherDisplay h2 img {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px;
+}
+
+#weatherDisplay p {
+  margin: 8px 0;
+}
+
+
+/* Animación suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Tema Día === */
+body.day-theme {
+  background: linear-gradient(135deg, #00c6ff, #0072ff); /* cielo azul */
+  color: #fff;
+}
+
+/* === Tema Noche === */
+body.night-theme {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* tonos oscuros */
+  color: #e0e0e0;
+}
+
+body.night-theme #container {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+body.night-theme h1 {
+  background: linear-gradient(90deg, #9cecfb, #65c7f7, #0052d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.night-theme #weatherDisplay h2 {
+  color: #9cecfb;
+}
